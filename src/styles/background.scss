@@ -1,0 +1,103 @@
+@mixin animation($animate...) {
+	$max: length($animate);
+	$animations: "";
+
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
+
+		@if $i < $max {
+			$animations: #{$animations + ", "};
+		}
+	}
+	-webkit-animation: $animations;
+	-moz-animation: $animations;
+	-o-animation: $animations;
+	animation: $animations;
+}
+
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+@include keyframes(rotate) {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.background {
+	height: 100vh;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	&:before,
+	&:after {
+		display: block;
+		content: " ";
+		width: 2560px;
+		height: 2560px;
+		position: absolute;
+		margin-top: -1280px;
+		margin-left: -1280px;
+		transform-origin: center;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 50;
+		top: 50%;
+		left: 50%;
+	}
+
+	&:before {
+		background-image: url("https://image.ibb.co/dwBeKk/circle_inner.png");
+		background-size: 100% auto;
+		@include animation("rotate 30s infinite linear");
+	}
+
+	&:after {
+		background-image: url("https://image.ibb.co/gTN8C5/circle_outer.png");
+		background-size: 100% auto;
+		@include animation("rotate 80s infinite linear");
+	}
+
+	.e-particles-orange {
+		position: absolute;
+		border-radius: 50%;
+		top: 50%;
+		left: 50%;
+		z-index: 5;
+		width: 1000px;
+		height: 600px;
+		opacity: 0.4;
+		transform: translate(-50%, -50%);
+	}
+
+	.e-particles-blue {
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		z-index: 5;
+		width: 100%;
+		height: 100%;
+		opacity: 0.1;
+	}
+}

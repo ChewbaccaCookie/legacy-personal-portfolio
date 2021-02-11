@@ -1,0 +1,6 @@
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+*.md
+Dockerfile

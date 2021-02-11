@@ -1,0 +1,125 @@
+@import "./background.scss"
+
+\:root
+    --highlight: #ea5847
+body
+    min-height: 100vh
+    min-height: -webkit-fill-available
+html
+    height: -webkit-fill-available
+html,body
+    font-family: "Crimson Text"
+    font-size: 20px
+    background-image: radial-gradient(circle, #191a1c, #191c1f, #191d23, #181f27, #17212a)
+    margin: 0px
+    padding: 0px
+
+    .home
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        min-height: calc(100vh - 95px)
+        .content
+            z-index: 100
+            width: 100%
+            max-width: 700px
+            margin: 20px
+        h2
+            font-family: "Raleway"
+            color: white
+            margin-top: 50px
+            font-size: 1.1rem
+        h1
+            color: var(--highlight)
+            margin: 0
+            text-transform: uppercase
+            font-size: 4rem
+            position: relative
+
+            @supports (-webkit-background-clip: text)
+                background: radial-gradient(ellipse at center, rgba(237, 103, 68, 1) 0%, rgba(236, 84, 63, 1) 100%)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+        .list
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            margin: 20px -10px 0px -10px
+            .box
+                width: 150px
+                height: 150px
+                background: #ea574765
+                backdrop-filter: blur(4px)
+                padding: 10px
+                margin: 5px
+                text-decoration: none
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                transition: 0.15s all ease-in-out
+                &:hover
+                    background: #ea47dc65
+
+                h3,h4
+                    font-family: "Raleway"
+                    color: white
+                    font-size: 0.8rem
+                    margin: 0px
+                    text-align: center
+                h4
+                    font-style: italic
+                    font-size: 0.7rem
+                    font-weight: normal
+                    margin-top: 20px
+
+        .description
+            color: var(--highlight)
+            font-size: 1rem
+            font-style: italic
+
+    ::-webkit-scrollbar
+        width: 4px
+        height: 2px
+
+    ::-webkit-scrollbar-button
+        width: 0px
+        height: 0px
+
+    ::-webkit-scrollbar-thumb
+        background: #c2c2c2
+        border: 0px none #ffffff
+        border-radius: 50px
+
+    ::-webkit-scrollbar-track
+        background: none
+        border: 0px none #ffffff
+        border-radius: 50px
+
+    ::-webkit-scrollbar-corner
+        background: transparent
+
+    p,h1,h2,h3
+        margin: 0px
+
+#footer
+    z-index: 100
+    display: flex
+    padding: 0px 30px
+    align-items: center
+    position: relative
+    flex-direction: column
+    div
+        margin: 5px 0px
+    a
+        text-decoration: none
+        color: white
+        opacity: 0.6
+        transition: 0.15s all ease-in-out
+        &:hover, &:hover i
+            color: #ea5747ec
+        i
+            color: white
+            transition: 0.15s all ease-in-out
+            font-size: 1.5rem

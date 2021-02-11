@@ -1,0 +1,28 @@
+{
+	"files.exclude": {
+		".editorconfig": true,
+		"dist": true,
+		"node_modules": true,
+		".prettierrc": true,
+		"nodemon.json": true,
+		"package-lock.json": true,
+		".vscode": true,
+		"..\\.husky\\_": true,
+		"..\\.husky": true,
+		"..\\node_modules": true,
+		".nyc_output": true,
+		"coverage": true,
+		"..\\dashboard\\node_modules": true,
+		"postcss.config.js": true,
+		".eslintrc": true,
+		"tsconfig*.json": true,
+		"webpack.dev.js": true,
+		"webpack.prod.js": true,
+		".gitignore": true,
+		"Dockerfile": true,
+		"codegen.yml": true,
+		"apollo.config.js": true,
+		".releaserc": true,
+		".dockerignore": true
+	}
+}
