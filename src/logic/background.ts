@@ -1,4 +1,5 @@
 import "particles.js";
+declare let particlesJS: any;
 
 export const initBackground = () => {
 	particlesJS("particleCanvas-Orange", {
