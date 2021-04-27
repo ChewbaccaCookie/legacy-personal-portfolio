@@ -1,0 +1,31 @@
+name: "🚀 Deploy"
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy-page:
+        runs-on: ubuntu-latest
+        name: "Deploy webpage"
+        steps:
+            - uses: actions/checkout@v2
+            - uses: technote-space/auto-cancel-redundant-job@v1
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 15
+
+            - name: 🏗 Install dependencies
+              run: npm install
+
+            - name: ✒ Check linting
+              run: npm run lint
+
+            - name: "⚙ Build page"
+              run: npm run build
+
+            - name: Deploy 🚀
+              uses: JamesIves/github-pages-deploy-action@4.0.0
+              with:
+                  branch: gh-pages
+                  folder: build
